@@ -3,6 +3,9 @@ package stepdefinitions;
 import io.cucumber.datatable.DataTable;
 import io.cucumber.java.en.*;
 
+import java.util.Collection;
+import java.util.stream.Stream;
+
 public class StepDefinitions {
 
     @Given("I tried to login with username {word}")
@@ -24,5 +27,6 @@ public class StepDefinitions {
     public void logged_in_details(DataTable data) {
         System.out.println("Data in datatable: "  + data);
         data.asList().forEach(System.out::println);
+        data.asLists().stream().flatMap(Collection::stream).forEach(System.out::println);
     }
 }
