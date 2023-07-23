@@ -29,4 +29,9 @@ public class StepDefinitions {
         data.asList().forEach(System.out::println);
         data.asLists().stream().flatMap(Collection::stream).forEach(System.out::println);
     }
+
+    @When("User login into application with username {word} and password {word}")
+    public void userLoginIntoApplicationWithUsernameUserNameAndPasswordPassword(String username, String password) {
+        System.out.println("Scenario outline with username = " + username + " password = " + password);
+    }
 }
